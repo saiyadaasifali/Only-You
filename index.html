@@ -6,28 +6,27 @@
     <title>My GitHub Website</title>
     <link rel="stylesheet" href="style.css">
     <style>
-       /* Force canvas to be a background layer */
+      /* Force canvas to be a background layer */
       #particle-canvas {
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: -1; /* Pushes it behind all other text and buttons */
-        background-color: #0d1117; /* Makes your background dark black/gray */
+        z-index: -1;
+        background-color: #0d1117;
       }
 
-      /* Ensures your other HTML text stays visible on top of the dark background */
       body {
         margin: 0;
         padding: 0;
-        color: #000000; /* Changed to white so you can read it on the dark background */
+        color: #ffffff;
         font-family: sans-serif;
       }
     </style>
 </head>
 <body>
-    <!-- 1. Add this canvas element at the very top of the body -->
+    <!-- Background Canvas -->
     <canvas id="particle-canvas"></canvas>
     
     <header style="padding: 20px; text-align: center;">
@@ -43,128 +42,143 @@
         <section style="margin-top: 30px;">
             <h2>Some Details</h2>
             <ul>
-                <li>i Have Written A Ep Named Aarzu</li>
-                <li>Ep Is Like A Small Album</li>
-                <li>i Can Also Write A Album But The Thing Is The Name</li>
-                <li>So Every Track Of This Ep Start With A Special Letter</li>
-                <li>which will become The Name Of Ep Together</li>
+                <li>I Have Written An EP Named Aarzu</li>
+                <li>EP Is Like A Small Album</li>
+                <li>I Can Also Write An Album But The Thing Is The Name</li>
+                <li>So Every Track Of This EP Starts With A Special Letter</li>
+                <li>Which Will Become The Name Of EP Together</li>
             </ul>
         </section>
         
-    <section style="margin-top: 30px;">
-        <h2>Tracks</h2>
-        <ul>
-            <li>Aarzoo</li>
-            <li>Anjuman</li>
-            <li>Raabta</li>
-            <li>....</li>
-            <li>Umeed</li>
-        </ul>
-    </section>
+        <section style="margin-top: 30px;">
+            <h2>Tracks</h2>
+            <ul>
+                <li>Aarzoo</li>
+                <li>Anjuman</li>
+                <li>Raabta</li>
+                <li>....</li>
+                <li>Umeed</li>
+            </ul>
+        </section>
+
+        <!-- Music Card Section -->
+        <section style="margin-top: 40px;">
+            <div class="music-card">
+              
+              <!-- 1. CD Disc -->
+              <div class="disk-container">
+                <div class="cd-disc" id="cdDisc">
+                  <img src="IMG_20251224_224750.jpg" alt="Aarzoo Cover" class="cd-cover">
+                  <div class="cd-shine"></div>
+                  <div class="cd-hole"></div>
+                </div>
+              </div>
+
+              <!-- Song Details -->
+              <h3 class="song-title">Aarzoo</h3>
+              <p class="song-subtext">Aarzu EP / written By Aasif</p>
+
+              <!-- 2. Audio Controls -->
+              <div class="controls-container">
+                <audio id="audioPlayer" controls>
+                  <source src="Aarzoo track 1.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+
+              <!-- 3. Lyrics -->
+              <div class="lyrics-container">
+                <h4>LYRICS</h4>
+                <p>[Verse 1]</p>
+                <p>Chehre pe noor aisa</p>
+                <p>Dil ke fitoor jesa</p>
+                <p>Tu meri madhumakkhi</p>
+                <p>Me tere phool jesa</p>
+                <br>
+                <p>[Verse 2]</p>
+                <p>Dur na jana kabhi</p>
+                <p>Tujh bin fazool sabhi</p>
+                <p>Tujse hi sari khushi</p>
+                <p>Tu hi meri zindagi</p>
+                <br>
+                <p>[Verse 3]</p>
+                <p>Tujh bin me banzar jamee</p>
+                <p>Mujhme hai teri kami</p>
+                <p>Mil jaye saath tera</p>
+                <p>Ho jaye gi ye hari</p>
+                <br>
+                <p>[Verse 4]</p>
+                <p>Aasmaa me badal chhaye</p>
+                <p>Tu baarish bankar aaye</p>
+                <p>Fir mujhpe baras jaye</p>
+                <p>Mitti ki khushboo aaye</p>
+                <br>
+                <p>[Verse 5]</p>
+                <p>Sunle meri aarzu</p>
+                <p>Aao kabhi rubaru</p>
+                <p>Tujhe dil ki baate kahu</p>
+                <p>Tere har nakhre sahu</p>
+                <br>
+                <p>[Verse 6]</p>
+                <p>Bas ek ishara dede</p>
+                <p>Dil ko sahara dede</p>
+                <p>Main tera ho gaya</p>
+                <p>Tujhme hi kho gaya</p>
+                <p>Tu hi thikana mera</p>
+                <p>Tu hi hain meri dua</p>
+                <br>
+                <p>[Hook]</p>
+                <p>Tu hi meri aarzu</p>
+                <p>Tu hi meri guftagoo</p>
+                <p>Tu hi mera khwaab hai</p>
+                <p>Tu hi mera justajoo</p>
+                <p>Tu hi mera chand hai</p>
+                <p>Tu hi meri raat hai</p>
+                <p>Tu hi meri saans hai</p>
+                <p>Tu hi meri pyaas hai</p>
+                <p>Tu hi meri aas hai</p>
+                <p>Tu hi mera chain hai</p>
+                <p>Tu hi mera hamsafar</p>
+                <p>Tu hi mera hai sabr</p>
+                <p>Tu meri zameen hai</p>
+                <p>Tu hi aasmaan hai</p>
+                <p>Tu hi hai dil mera</p>
+                <p>Tu hi meri dhadkanein</p>
+                <p>Tu hi mera marz hai</p>
+                <p>Tu hi meri hai shifaa</p>
+                <p>Tu mera nasib hai</p>
+                <p>Tu mere qareeb hai</p>
+                <p>Tu mera fitoor hai</p>
+                <p>Tu mera junoon hai</p>
+                <p>Tu mera guroor hai</p>
+                <p>Tu mera sukoon hai</p>
+                <p>Tu hi mera imtehaan</p>
+                <p>Tu hi hai meri duaa</p>
+              </div>
+
+            </div>
+        </section>
     </main>
-    <section>
-<div class="music-card">
-<div class="music-card">
-  
-  <div class="disk-container">
-    <div class="cd-disc" id="cdDisc">
-      
-      <img src="IMG_20251224_224750.jpg" alt="Album Art" class="cd-cover">
 
-      <div class="cd-shine"></div>
-      
-      <div class="cd-hole"></div>
-    </div>
-  </div>
-       <h3>Aarzoo</h3>
-        <li>Aarzu EP / written By Aasif</li>
-   </div>
-
-  
-  <div class="controls-container">
-    <audio controls>
-      <source src="Aarzoo track 1.mp3" type="audio/mpeg">
-    
-    </audio>
-  </div>
-  
-  <div class="lyrics-container">
-    <h4>Lyrics</h4>
-    <p>[Verse 1]</p>
-<p>Chehre pe noor aisa</p>
-<p>Dil ke fitoor jesa</p>
-<p>Tu meri madhumakkhi</p>
-<p>Me tere phool jesa</p>
-<p></p>
-<p>[Verse 2]</p>
-<p>Dur na jana kabhi</p>
-<p>Tujh bin fazool sabhi</p>
-<p>Tujse hi sari khushi</p>
-<p>Tu hi meri zindagi</p>
-<p></p>
-<p>[Verse 3]</p>
-<p>Tujh bin me banzar jamee</p>
-<p>Mujhme hai teri kami</p>
-<p>Mil jaye saath tera</p>
-<p>Ho jaye gi ye hari</p>
-<p></p>
-<p>[Verse 4]</p>
-<p>Aasmaa me badal chhaye</p>
-<p>tu baarish bankar aaye</p>
-<p>Fir mujhpe baras jaye</p>
-<p>Mitti ki khushboo aaye</p>
-<p></p>
-<p>[Verse 5]</p>
-<p>Sunle meri aarzu</p>
-<p>Aao kabhi rubaru</p>
-<p>Tujhe dil ki baate kahu </p>
-<p>Tere har nakhre sahu</p>
-<p></p>
-<p>[Verse 6]</p>
-<p>Bas ek ishara dede</p>
-<p>Dil ko sahara dede</p>
-<p>Main tera ho gaya</p>
-<p>Tujhme hi kho gaya</p>
-<p>Tu hi thikana mera</p>
-<p>Tu hi hain meri dua</p>
-<p></p>
-<p></p>
-<p>[Hook]</p>
-<p>Tu hi meri aarzu</p>
-<p>Tu hi meri guftagoo</p>
-<p>Tu hi mera khwaab hai</p>
-<p>Tu hi mera justajoo</p>
-<p>Tu hi mera chand hai</p>
-<p>Tu hi meri raat hai</p>
-<p>Tu hi meri saans hai</p>
-<p>Tu hi meri pyaas hai</p>
-<p>Tu hi meri aas hai</p>
-<p>Tu hi mera chain hai</p>
-<p>Tu hi mera hamsafar</p>
-<p>Tu hi mera hai sabr</p>
-<p>Tu meri zameen hai</p>
-<p>Tu hi aasmaan hai</p>
-<p>Tu hi hai dil mera</p>
-<p>Tu hi meri dhadkanein</p>
-<p>Tu hi mera marz hai</p>
-<p>Tu hi meri hai shifaa</p>
-<p>Tu mera nasib hai</p>
-<p>Tu mere qareeb hai</p>
-<p>Tu mera fitoor hai</p>
-<p>Tu mera junoon hai</p>
-<p>Tu mera guroor hai</p>
-<p>Tu mera sukoon hai</p>
-<p>Tu hi mera imtehaan</p>
-<p>Tu hi hai meri duaa</p>
-  </div>
-</div>
-    </section>
-
-
-    
     <footer style="text-align: center; padding: 40px 20px; font-size: 0.8rem; color: #8b949e;">
         <p>&copy; Aasif 2008</p>
     </footer>
+
+    <!-- Spin Script for CD Player -->
+    <script>
+      const audio = document.getElementById('audioPlayer');
+      const cdDisc = document.getElementById('cdDisc');
+
+      if (audio && cdDisc) {
+        audio.addEventListener('play', () => {
+          cdDisc.classList.add('spinning');
+        });
+
+        audio.addEventListener('pause', () => {
+          cdDisc.classList.remove('spinning');
+        });
+      }
+    </script>
     <script src="./script.js"></script>
 </body>
 </html>
