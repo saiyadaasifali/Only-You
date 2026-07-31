@@ -60,7 +60,7 @@ footer {
     background: rgba(255, 255, 255, 0.9) !important; 
     color: #333;
 }
-{
+.audio-box {
     background-color: #ffffff;
     border: 2px solid #e0e0e0;
     border-radius: 12px;
@@ -71,9 +71,10 @@ footer {
     text-align: center;
 }
 
-
+ {
     width: 100%;
     margin-top: 10px;
 }
+
 
 
