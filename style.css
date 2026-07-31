@@ -8,10 +8,16 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #0d1117;
+    
+    /* Smooth gradient that shifts as you scroll down */
+    background: linear-gradient(180deg, #0d1117 0%, #1a2332 35%, #233145 70%, #0d1117 100%);
+    background-attachment: scroll; /* Lets the gradient scroll naturally with the page */
+    background-size: 100% 100%;
+    
     color: #333;
     overflow-x: hidden;
 }
+
 
 /* Background Particle Canvas Layer */
 #particle-canvas {
