@@ -96,104 +96,243 @@ footer {
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   border: 1px solid #ccc;
-  
-  animation: spin 8s linear infinite;
-  animation-play-state: paused;
+/* Universal Box-Sizing Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    
+    /* Smooth gradient that shifts as you scroll down */
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0d1117 0%, #1a2332 35%, #233145 70%, #0d1117 100%);
+    background-attachment: scroll; /* Lets the gradient scroll naturally with the page */
+    background-size: 100% 100%;
+    
+    color: #e6edf3;
+    overflow-x: hidden;
+}
+
+/* Background Particle Canvas Layer */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+header {
+    background-color: rgba(57, 118, 179, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Modern Glassmorphism Sections */
+section {
+    background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
+    backdrop-filter: blur(12px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12); /* Subtle glass edge */
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
+    color: #e6edf3; /* Clean bright text */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Glowing Hover Effect when you hover/tap */
+section:hover {
+    transform: translateY(-4px);
+    border-color: rgba(57, 118, 179, 0.6);
+    box-shadow: 0 12px 40px rgba(57, 118, 179, 0.25);
+}
+
+/* Headings with Gradient Text */
+section h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    background: linear-gradient(90deg, #38ef7d, #11998e); /* Neon Mint Gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* List Items Styling */
+section ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+section li {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+section li::marker {
+    color: #38ef7d; /* Matches the heading accent color */
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.8rem;
+    color: #8b949e;
+}
+
+/* --- Glassy Music Card Styles --- */
+.music-card {
+    background: rgba(18, 24, 38, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 25px;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(57, 118, 179, 0.15);
+}
+
+.disk-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cd-disc {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    animation: spin 8s linear infinite;
+    animation-play-state: paused;
 }
 
 .cd-disc.spinning {
-  animation-play-state: running;
+    animation-play-state: running;
 }
 
 .cd-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .cd-shine {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: 
-    repeating-radial-gradient(
-      circle at center,
-      transparent 0,
-      transparent 3px,
-      rgba(0, 0, 0, 0.05) 4px,
-      transparent 5px
-    ),
-    conic-gradient(
-      from 45deg,
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.05) 20%,
-      rgba(255, 255, 255, 0.3) 40%,
-      rgba(0, 0, 0, 0.1) 60%,
-      rgba(255, 255, 255, 0.3) 80%,
-      rgba(255, 255, 255, 0.05) 100%
-    );
-  pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: 
+      repeating-radial-gradient(
+        circle at center,
+        transparent 0,
+        transparent 3px,
+        rgba(0, 0, 0, 0.05) 4px,
+        transparent 5px
+      ),
+      conic-gradient(
+        from 45deg,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.05) 20%,
+        rgba(255, 255, 255, 0.3) 40%,
+        rgba(0, 0, 0, 0.1) 60%,
+        rgba(255, 255, 255, 0.3) 80%,
+        rgba(255, 255, 255, 0.05) 100%
+      );
+    pointer-events: none;
 }
 
 .cd-hole {
-  width: 28px;
-  height: 28px;
-  background-color: #ffffff; 
-  border: 4px solid rgba(200, 200, 200, 0.8); 
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+    width: 28px;
+    height: 28px;
+    background-color: #121826; 
+    border: 4px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
 .song-title {
-  margin: 10px 0 2px 0;
-  font-size: 1.2rem;
-  color: #1a1a1a;
+    margin: 12px 0 4px 0;
+    font-size: 1.4rem;
+    color: #ffffff;
 }
 
 .song-subtext {
-  margin: 0 0 15px 0;
-  font-size: 0.85rem;
-  color: #666666;
+    margin: 0 0 15px 0;
+    font-size: 0.85rem;
+    color: #94a3b8;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .controls-container {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .controls-container audio {
-  width: 100%;
+    width: 100%;
 }
 
+/* Dark Styled Lyrics Box */
 .lyrics-container {
-  max-height: 120px;
-  overflow-y: auto;
-  background: rgba(0, 0, 0, 0.04);
-  padding: 12px;
-  border-radius: 12px;
-  text-align: left;
+    max-height: 140px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: left;
 }
 
 .lyrics-container h4 {
-  margin: 0 0 8px 0;
-  font-size: 0.9rem;
-  color: #666;
-  text-transform: uppercase;
+    margin: 0 0 8px 0;
+    font-size: 0.8rem;
+    color: #38ef7d;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .lyrics-container p {
-  margin: 6px 0;
-  font-size: 0.95rem;
-  color: #333;
+    margin: 6px 0;
+    font-size: 0.95rem;
+    color: #e2e8f0;
 }
