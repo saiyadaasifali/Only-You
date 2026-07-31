@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub Website</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Notice the ?v=2 at the end - this forces mobile browsers to reload fresh CSS -->
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
-    <!-- Background Canvas -->
+
     <canvas id="particle-canvas"></canvas>
     
-        <header>
+    <header>
         <span class="badge">Official Site</span>
         <h1>Welcome to My Website!</h1>
-        <p class="header-subtitle">Home of the upcoming EP — <span>Tracks</span></p>
+        <p class="header-subtitle">Home of the upcoming EP — <span>AARZOO</span></p>
     </header>
-
     
     <main>
         <section>
@@ -48,7 +48,6 @@
         <!-- Music Card -->
         <div class="music-card">
           
-          <!-- 1. CD Disc -->
           <div class="disk-container">
             <div class="cd-disc" id="cdDisc">
               <img src="IMG_20251224_224750.jpg" alt="Aarzoo Cover" class="cd-cover">
@@ -57,11 +56,9 @@
             </div>
           </div>
 
-          <!-- Song Details -->
           <h3 class="song-title">Aarzoo</h3>
           <p class="song-subtext">Aarzu EP / written By Aasif</p>
 
-          <!-- 2. Audio Controls -->
           <div class="controls-container">
             <audio id="audioPlayer" controls>
               <source src="Aarzoo track 1.mp3" type="audio/mpeg">
@@ -69,7 +66,6 @@
             </audio>
           </div>
 
-          <!-- 3. Lyrics -->
           <div class="lyrics-container">
             <h4>LYRICS</h4>
             <p>[Verse 1]</p>
@@ -146,7 +142,6 @@
         <p>&copy; Aasif 2008</p>
     </footer>
 
-    <!-- Spin Script for CD Player -->
     <script>
       const audio = document.getElementById('audioPlayer');
       const cdDisc = document.getElementById('cdDisc');
