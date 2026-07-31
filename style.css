@@ -60,7 +60,7 @@ footer {
     background: rgba(255, 255, 255, 0.9) !important; 
     color: #333;
 }
-.audio-box {
+audio-box {
     background-color: #ffffff;
     border: 2px solid #e0e0e0;
     border-radius: 12px;
@@ -74,6 +74,94 @@ footer {
  {
     width: 100%;
     margin-top: 10px;
+}
+music-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  padding: 25px;
+  margin: 20px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.disk-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.vinyl-record {
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle, #222 35%, #111 36%, #333 45%, #111 55%, #222 65%, #000 70%);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: spin 8s linear infinite;
+}
+
+.record-center {
+  width: 40px;
+  height: 40px;
+  background-color: #1abc9c; /* Color of record center label */
+  border: 3px solid #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.record-center::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.controls-container {
+  margin-bottom: 20px;
+}
+
+.controls-container audio {
+  width: 100%;
+}
+
+.lyrics-container {
+  max-height: 120px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 12px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.lyrics-container h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lyrics-container p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
 }
 
 
