@@ -31,19 +31,61 @@ body {
 }
 
 header {
-    background-color: rgba(57, 118, 179, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* --- Modern Glass Header --- */
+header {
+    background: rgba(13, 17, 23, 0.4); /* Transparent to show particle canvas */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 35px 20px 25px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-header h1 {
-    color: white;
-    margin: 0;
+/* Optional top tag/badge */
+header .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(56, 239, 125, 0.15);
+    border: 1px solid rgba(56, 239, 125, 0.4);
+    color: #38ef7d;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 10px;
 }
+
+/* Main Glowing Title */
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #38ef7d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(56, 239, 125, 0.2);
+}
+
+/* Subtitle under title */
+header .header-subtitle {
+    margin: 8px 0 0;
+    font-size: 0.95rem;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+header .header-subtitle span {
+    color: #38ef7d;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
 
 main {
     max-width: 800px;
