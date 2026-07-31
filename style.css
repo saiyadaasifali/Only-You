@@ -75,7 +75,8 @@ audio-box {
     width: 100%;
     margin-top: 10px;
 }
-music-card {
+
+.music-card {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   border-radius: 20px;
@@ -93,44 +94,78 @@ music-card {
   margin-bottom: 20px;
 }
 
-.vinyl-record {
-  width: 130px;
-  height: 130px;
-  background: radial-gradient(circle, #222 35%, #111 36%, #333 45%, #111 55%, #222 65%, #000 70%);
+.cd-disc {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  border: 1px solid #ccc;
+  
   animation: spin 8s linear infinite;
+  animation-play-state: paused;
 }
 
-.record-center {
-  width: 40px;
-  height: 40px;
-  background-color: #1abc9c; /* Color of record center label */
-  border: 3px solid #000;
+.cd-disc.spinning {
+  animation-play-state: running;
+}
+
+.cd-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cd-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: 
+    
+    repeating-radial-gradient(
+      circle at center,
+      transparent 0,
+      transparent 3px,
+      rgba(0, 0, 0, 0.05) 4px,
+      transparent 5px
+    ),
+    
+    conic-gradient(
+      from 45deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.05) 20%,
+      rgba(255, 255, 255, 0.3) 40%,
+      rgba(0, 0, 0, 0.1) 60%,
+      rgba(255, 255, 255, 0.3) 80%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+  pointer-events: none;
+}
+
+
+.cd-hole {
+  width: 28px;
+  height: 28px;
+  background-color: #ffffff; 
+  border: 4px solid rgba(200, 200, 200, 0.8); 
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
-.record-center::after {
-  content: '';
-  width: 10px;
-  height: 10px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
 
 .controls-container {
   margin-bottom: 20px;
@@ -154,15 +189,14 @@ music-card {
   font-size: 0.9rem;
   color: #666;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .lyrics-container p {
   margin: 6px 0;
   font-size: 0.95rem;
   color: #333;
-  line-height: 1.4;
 }
+
 
 
 
