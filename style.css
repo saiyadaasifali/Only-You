@@ -1,4 +1,3 @@
-/* Universal Box-Sizing Reset */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -16,7 +15,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Background Particle Canvas Layer */
 #particle-canvas {
     position: fixed;
     top: 0;
@@ -27,7 +25,6 @@ body {
     pointer-events: none;
 }
 
-/* --- Glass Header --- */
 header {
     background: rgba(13, 17, 23, 0.5) !important;
     backdrop-filter: blur(16px);
@@ -76,12 +73,11 @@ header .header-subtitle span {
 }
 
 main {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 20px auto;
     padding: 0 20px;
 }
 
-/* Glassmorphism Sections */
 section {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
@@ -93,19 +89,14 @@ section {
     color: #e6edf3;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    
-    /* Removes the default mobile grey/blue highlight box when touched */
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Glowing Effect on Hover, Focus, and Touch (Active) */
 section:hover,
-section:focus,
 section:active {
     transform: translateY(-4px);
     border-color: rgba(56, 239, 125, 0.6);
-    box-shadow: 0 12px 40px rgba(56, 239, 125, 0.3);
-}
+    box-shadow: 0 12px 40px rgba(56, 239, 125, 0.25);
 }
 
 section h2 {
@@ -113,9 +104,12 @@ section h2 {
     margin-top: 0;
     background: linear-gradient(90deg, #38ef7d, #11998e);
     -webkit-background-clip: text !important;
+    background-clip: text;
     -webkit-text-fill-color: transparent !important;
     text-transform: uppercase;
     letter-spacing: 1px;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
 section ul {
@@ -139,30 +133,53 @@ footer {
     color: #8b949e;
 }
 
-/* Glassy Music Card */
-.music-card {
+.song-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 5px 30px 5px;
+    scroll-snap-type: x mandatory;
+}
+
+.music-card-1,
+.music-card-2,
+.music-card-3,
+.music-card-4,
+.music-card-5 {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    margin: 0;
     background: rgba(18, 24, 38, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 24px;
-    padding: 25px;
-    margin: 30px auto;
-    width: 100%;
-    max-width: 340px;
+    border-radius: 20px;
+    padding: 20px 15px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.music-card-2,
+.music-card-3,
+.music-card-4,
+.music-card-5 {
+    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .disk-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .cd-disc {
-    width: 150px !important;
-    height: 150px !important;
+    width: 140px !important;
+    height: 140px !important;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
@@ -176,12 +193,15 @@ footer {
     animation-play-state: running;
 }
 
-/* Prevents the image from overflowing raw pixel dimensions */
+.placeholder-disc {
+    background: radial-gradient(circle, #2a384c 0%, #111827 100%);
+}
+
 .cd-cover {
     width: 100% !important;
     height: 100% !important;
-    max-width: 150px !important;
-    max-height: 150px !important;
+    max-width: 140px !important;
+    max-height: 140px !important;
     object-fit: cover;
 }
 
@@ -213,8 +233,8 @@ footer {
 }
 
 .cd-hole {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     background-color: #121826; 
     border: 4px solid rgba(255, 255, 255, 0.3); 
     border-radius: 50%;
@@ -226,13 +246,13 @@ footer {
 }
 
 .song-title {
-    margin: 12px 0 4px 0;
-    font-size: 1.4rem;
+    margin: 10px 0 4px 0;
+    font-size: 1.3rem;
     color: #ffffff;
 }
 
 .song-subtext {
-    margin: 0 0 15px 0;
+    margin: 0 0 12px 0;
     font-size: 0.85rem;
     color: #94a3b8;
 }
@@ -243,7 +263,7 @@ footer {
 }
 
 .controls-container {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .controls-container audio {
@@ -251,18 +271,18 @@ footer {
 }
 
 .lyrics-container {
-    max-height: 200px;
+    max-height: 180px;
     overflow-y: auto;
     background: rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 16px;
+    padding: 12px;
     border-radius: 12px;
     text-align: center;
 }
 
 .lyrics-container h4 {
-    margin: 0 0 12px 0;
-    font-size: 0.85rem;
+    margin: 0 0 10px 0;
+    font-size: 0.8rem;
     color: #38ef7d;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -274,7 +294,18 @@ footer {
 
 .lyrics-container p {
     margin: 4px 0;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #f1f5f9;
-    line-height: 1.5;
-    }
+    line-height: 1.4;
+}
+
+.coming-soon-badge {
+    margin-top: 15px;
+    padding: 6px 14px;
+    background: rgba(56, 239, 125, 0.1);
+    border: 1px solid rgba(56, 239, 125, 0.3);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #38ef7d;
+}
+
