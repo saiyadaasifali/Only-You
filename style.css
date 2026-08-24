@@ -183,6 +183,9 @@ footer {
     border-radius: 50%;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.2);
     animation: spin 8s linear infinite;
@@ -198,11 +201,15 @@ footer {
 }
 
 .cd-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100% !important;
     height: 100% !important;
     max-width: 140px !important;
     max-height: 140px !important;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 .cd-shine {
@@ -230,6 +237,7 @@ footer {
         rgba(255, 255, 255, 0.05) 100%
       );
     pointer-events: none;
+    z-index: 1;
 }
 
 .cd-hole {
@@ -243,6 +251,7 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 .song-title {
@@ -308,4 +317,3 @@ footer {
     font-size: 0.8rem;
     color: #38ef7d;
 }
-
