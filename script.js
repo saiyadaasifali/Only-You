@@ -11,7 +11,7 @@ window.addEventListener('resize', resizeCanvas);
 class Particle {
     constructor() {
         this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height - canvas.height;
+        this.y = Math.random() * canvas.height; // Distributes particles across the entire viewport initially
         this.size = Math.random() * 3 + 1;
         this.speedY = Math.random() * 1.5 + 0.5;
         this.speedX = Math.random() * 0.5 - 0.25;
@@ -56,10 +56,12 @@ animate();
 
 document.querySelectorAll('section').forEach(s => s.addEventListener('touchstart', () => {}, {passive: true}));
 
+// Audio playback and CD spinning controls
 const audioPlayers = document.querySelectorAll('audio');
 
 audioPlayers.forEach(audio => {
   audio.addEventListener('play', (event) => {
+    // Pause other audio players when one plays
     audioPlayers.forEach(otherAudio => {
       if (otherAudio !== event.target) {
         otherAudio.pause();
@@ -69,9 +71,7 @@ audioPlayers.forEach(audio => {
     const currentCard = audio.closest('[class*="music-card"]');
     if (currentCard) {
       const disc = currentCard.querySelector('.cd-disc');
-      if (disc) {
-        disc.classList.add('spinning');
-      }
+      disc?.classList.add('spinning');
     }
   });
 
@@ -79,9 +79,7 @@ audioPlayers.forEach(audio => {
     const currentCard = audio.closest('[class*="music-card"]');
     if (currentCard) {
       const disc = currentCard.querySelector('.cd-disc');
-      if (disc) {
-        disc.classList.remove('spinning');
-      }
+      disc?.classList.remove('spinning');
     }
   });
 
@@ -89,9 +87,7 @@ audioPlayers.forEach(audio => {
     const currentCard = audio.closest('[class*="music-card"]');
     if (currentCard) {
       const disc = currentCard.querySelector('.cd-disc');
-      if (disc) {
-        disc.classList.remove('spinning');
-      }
+      disc?.classList.remove('spinning');
     }
   });
 });
