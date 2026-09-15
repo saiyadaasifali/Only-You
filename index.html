@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>This One Only For You</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
@@ -20,6 +20,25 @@
         <section>
             <h2>Hello There</h2>
             <p>Assalamualaikum warahmatullahi wabarakatuhu.</p>
+        </section>
+
+        <!-- Sneak Peeks Box Trigger -->
+        <section>
+            <h2>Sneak Peeks</h2>
+            <p class="section-intro">Exclusive behind-the-scenes previews and production progress.</p>
+
+            <div class="sp-trigger-box" id="open-sp-modal">
+                <div class="sp-preview-stack">
+                    <img src="sp3.jpg" alt="Sneak Peek Preview" class="sp-stack-img img-3">
+                    <img src="sp2.jpg" alt="Sneak Peek Preview" class="sp-stack-img img-2">
+                    <img src="sp1.jpg" alt="Sneak Peek Preview" class="sp-stack-img img-1">
+                </div>
+                <div class="sp-trigger-content">
+                    <h3>View Production Sneak Peeks</h3>
+                    <p>Tap to open the full scrollable gallery</p>
+                    <span class="sp-count-badge">17+ Images</span>
+                </div>
+            </div>
         </section>
 
         <section>
@@ -164,6 +183,140 @@
         </div>
     </main>
 
+    <!-- Scrollable Sneak Peeks Modal Overlay -->
+    <div class="sp-modal-overlay" id="sp-modal">
+        <div class="sp-modal-content">
+            <div class="sp-modal-header">
+                <h3>Sneak Peeks Gallery</h3>
+                <button class="sp-close-btn" id="close-sp-modal">&times;</button>
+            </div>
+            <div class="sp-modal-body">
+                <div class="sp-gallery-grid">
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp1.jpg" alt="Sneak Peek 1" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows the initial DAW project arrangement and track layout.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp2.jpg" alt="Sneak Peek 2" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows tempo calibration and 150 BPM metronome setup.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp3.jpg" alt="Sneak Peek 3" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows acoustic bass adjustments and low-end tuning.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp4.jpg" alt="Sneak Peek 4" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows piano melody chord patterns layered over guitar tracks.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp5.jpg" alt="Sneak Peek 5" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows vocal hook placement and drop markers.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp6.jpg" alt="Sneak Peek 6" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows handwritten lyric drafts and rhyme schemes.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp7.jpg" alt="Sneak Peek 7" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows equalizer frequency cuts and vocal clarity tuning.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp8.jpg" alt="Sneak Peek 8" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows spatial reverb configuration and delay timings.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp9.jpg" alt="Sneak Peek 9" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows balance adjustments across dynamic audio channels.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp10.jpg" alt="Sneak Peek 10" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows percussion sequencing and custom drum loop builds.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp11.jpg" alt="Sneak Peek 11" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows verse transition automation and volume levels.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp12.jpg" alt="Sneak Peek 12" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows melodic bridge arrangements before chorus drops.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp13.jpg" alt="Sneak Peek 13" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows dynamic compressor threshold and ratio controls.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp14.jpg" alt="Sneak Peek 14" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows digital cover artwork mockups and visual designs.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp15.jpg" alt="Sneak Peek 15" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows concept outlines for upcoming sequel releases.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp16.jpg" alt="Sneak Peek 16" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows structure breakdowns for lyric draft sessions.</p>
+                    </div>
+
+                    <div class="sp-card-item">
+                        <div class="sp-img-wrapper">
+                            <img src="sp17.jpg" alt="Sneak Peek 17" class="sp-img">
+                        </div>
+                        <p class="sp-desc">This image shows master audio export settings and final bounce checks.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; Aasif 2008</p>
     </footer>
@@ -171,3 +324,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
