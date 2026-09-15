@@ -1,3 +1,4 @@
+// Background Canvas Particles
 const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
 
@@ -11,7 +12,7 @@ window.addEventListener('resize', resizeCanvas);
 class Particle {
     constructor() {
         this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height; // Distributes particles across the entire viewport initially
+        this.y = Math.random() * canvas.height;
         this.size = Math.random() * 3 + 1;
         this.speedY = Math.random() * 1.5 + 0.5;
         this.speedX = Math.random() * 0.5 - 0.25;
@@ -43,51 +44,49 @@ for (let i = 0; i < 80; i++) {
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
     particlesArray.forEach(particle => {
         particle.update();
         particle.draw();
     });
-
     requestAnimationFrame(animate);
 }
 
 animate();
 
+// Touch responsiveness fix for mobile devices
 document.querySelectorAll('section').forEach(s => s.addEventListener('touchstart', () => {}, {passive: true}));
 
-// Audio playback and CD spinning controls
-const audioPlayers = document.querySelectorAll('audio');
+// Sneak Peeks (SP) Scrollable Gallery Modal Toggle
+const openSpModal = document.getElementById('open-sp-modal');
+const closeSpModal = document.getElementById('close-sp-modal');
+const spModal = document.getElementById('sp-modal');
 
-audioPlayers.forEach(audio => {
-  audio.addEventListener('play', (event) => {
-    // Pause other audio players when one plays
-    audioPlayers.forEach(otherAudio => {
-      if (otherAudio !== event.target) {
-        otherAudio.pause();
-      }
+if (openSpModal && closeSpModal && spModal) {
+    // Open Modal and lock background scrolling
+    openSpModal.addEventListener('click', () => {
+        spModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     });
 
-    const currentCard = audio.closest('[class*="music-card"]');
-    if (currentCard) {
-      const disc = currentCard.querySelector('.cd-disc');
-      disc?.classList.add('spinning');
-    }
-  });
+    // Function to close modal and restore background scrolling
+    const closeModal = () => {
+        spModal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
 
-  audio.addEventListener('pause', () => {
-    const currentCard = audio.closest('[class*="music-card"]');
-    if (currentCard) {
-      const disc = currentCard.querySelector('.cd-disc');
-      disc?.classList.remove('spinning');
-    }
-  });
+    closeSpModal.addEventListener('click', closeModal);
 
-  audio.addEventListener('ended', () => {
-    const currentCard = audio.closest('[class*="music-card"]');
-    if (currentCard) {
-      const disc = currentCard.querySelector('.cd-disc');
-      disc?.classList.remove('spinning');
-    }
-  });
-});
+    // Close when clicking on the dark background overlay
+    spModal.addEventListener('click', (e) => {
+        if (e.target === spModal) {
+            closeModal();
+        }
+    });
+
+    // Close modal with Escape key
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && spModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+}
